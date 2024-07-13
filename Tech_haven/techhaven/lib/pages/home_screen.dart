@@ -23,7 +23,7 @@ class _ProductByCategoryScreenState extends State<ProductByCategoryScreen> {
   bool isLoading = false;
   String selectedCategory = "All";
 
-  // ? bangrdnaway categoryakan
+  // ? fetching categoryakan
   Future<void> fetchCategories() async {
     const String url = "http://localhost:3000/api/products/categories";
     try {
@@ -42,7 +42,7 @@ class _ProductByCategoryScreenState extends State<ProductByCategoryScreen> {
           myCategories = fetchedCategories;
         });
 
-        // Fetch products for the initial selected category
+        // Fetch products when selected category
         if (myCategories.isNotEmpty) {
           fetchCategoriesProduct(selectedCategory);
         }
@@ -57,7 +57,7 @@ class _ProductByCategoryScreenState extends State<ProductByCategoryScreen> {
     }
   }
 
-  // ? bangkrddnaway products bapey category
+  // ? calling products by category
   Future<void> fetchCategoriesProduct(String category) async {
     final String baseUrl = "http://localhost:3000/api/products";
     String url;
@@ -250,7 +250,7 @@ class _ProductByCategoryScreenState extends State<ProductByCategoryScreen> {
                                           children: [
                                             Container(
                                               width:
-                                                  200, // Example width constraint
+                                                  200,
                                               child: Text(
                                                 "Product Name: ${product["productName"] ?? ''}",
                                                 style: TextStyle(
