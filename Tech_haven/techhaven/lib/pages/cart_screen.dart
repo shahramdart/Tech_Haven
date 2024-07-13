@@ -33,10 +33,10 @@ class _CartScreenState extends State<CartScreen> {
         body: jsonEncode(order.toJson()),
       );
       if (response.statusCode == 200) {
-        // ? agar response sarkawtw
+        // ? if response successfull
         print('داواکاریەکەت سەرکەوتوبوو: ${response.body}');
       } else {
-        // ? agar response sarkawtwnabu
+        // ? if response unsuccessfull
         print(
             'ئۆردەرکردنەکە سەرکەوتوو نەبوو: ${response.statusCode} ${response.body}');
       }
@@ -137,7 +137,7 @@ class _CartScreenState extends State<CartScreen> {
                                         children: [
                                           Container(
                                             width:
-                                                200, // Example width constraint
+                                                200, 
                                             child: Text(
                                               "Product Name: ${item.productName}",
                                               style: TextStyle(
@@ -415,7 +415,7 @@ class _CartScreenState extends State<CartScreen> {
                                                     await sendOrder(order);
                                                     cartProvider.clearCart();
                                                     Navigator.pop(
-                                                        context); // Close the modal sheet
+                                                        context); 
                                                     ScaffoldMessenger.of(
                                                             context)
                                                         .showSnackBar(
