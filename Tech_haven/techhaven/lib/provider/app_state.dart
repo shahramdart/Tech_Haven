@@ -75,21 +75,3 @@ class CartProvider with ChangeNotifier {
 
 
 
-class TotalPriceController extends ChangeNotifier {
-  late double _totalPrice;
-  List<CartItem> _items;
-
-  TotalPriceController(this._items) {
-    _calculateTotalPrice();
-  }
-
-  double get totalPrice => _totalPrice;
-
-  void _calculateTotalPrice() {
-    _totalPrice = 0.0;
-    for (var item in _items) {
-      _totalPrice += item.productPrice * item.quantity;
-    }
-    notifyListeners();
-  }
-}
