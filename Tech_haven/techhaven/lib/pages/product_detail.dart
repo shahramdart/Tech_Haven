@@ -240,7 +240,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
     );
   }
 
-  // ? ddruskrdny circleky rangakan la jyaty text
+  // ? druskrdny circleky rangakan la jyaty text
   List<Widget> _buildColorCircles(String? productColors) {
     if (productColors == null || productColors.isEmpty) {
       return [
